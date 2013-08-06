@@ -71,6 +71,43 @@ $(function() {
     });
 });
 
+$(function() {
+    $('.name').click(function(){
+        var id = $(this).attr('id');
+        
+        if(id == 'Rbox') {
+	    r = 255; g = 0; b = 0;
+            color_r = r; $('#Rbar, #Rtext').val(r);
+            color_g = g; $('#Gbar, #Gtext').val(g);
+            color_b = b; $('#Bbar, #Btext').val(b);
+        } else if( id == 'Gbox') {
+	    r = 0; g = 255; b = 0;
+            color_r = r; $('#Rbar, #Rtext').val(r);
+            color_g = g; $('#Gbar, #Gtext').val(g);
+            color_b = b; $('#Bbar, #Btext').val(b);
+        } else if( id == 'Bbox') {
+            r = 0; g = 0; b = 255;
+            color_r = r; $('#Rbar, #Rtext').val(r);
+            color_g = g; $('#Gbar, #Gtext').val(g);
+            color_b = b; $('#Bbar, #Btext').val(b);
+        } else if( id == 'Wbox') {
+            r = 255; g = 255; b = 255;
+            color_r = r; $('#Rbar, #Rtext').val(r);
+            color_g = g; $('#Gbar, #Gtext').val(g);
+            color_b = b; $('#Bbar, #Btext').val(b);
+        } else if( id == 'Kbox') {
+            r = 0; g = 0; b = 0;
+            color_r = r; $('#Rbar, #Rtext').val(r);
+            color_g = g; $('#Gbar, #Gtext').val(g);
+            color_b = b; $('#Bbar, #Btext').val(b);
+        }
+        
+        change_bgcolor();
+      }
+    )
+  }
+);
+
 </script>
 
 
@@ -152,25 +189,27 @@ margin: 0;
 <div style="width: 275px;">
 <input type="text" value="255" class="ctext" id="Rtext"
     pattern="^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$"></input>
-    <div class="name" style="background-color: #F00;"></div>
+    <div class="name" style="background-color: #F00;" id='Rbox'></div>
 <input type="range" id="Rbar" class="cbar" min="0" max="255" value="255"></input>
 <br />
 
 <input type="text" value="255" class="ctext" id="Gtext"
     pattern="^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$"></input>
-    <div class="name" style="background-color: #0F0;"></div>
+    <div class="name" style="background-color: #0F0;" id='Gbox'></div>
 <input type="range" id="Gbar" class="cbar" min="0" max="255" value="255"></input>
 <br />
 
 <input type="text" value="255" class="ctext" id="Btext"
     pattern="^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$"></input>
-    <div class="name" style="background-color: #00F;"></div>
+    <div class="name" style="background-color: #00F;" id='Bbox'></div>
 <input type="range" id="Bbar" class="cbar" min="0" max="255" value="255"></input>
 <br />
 
 Color Code:
 <input type="text" value="#FFFFFF" class="ctext" id="ccode"
     pattern="^#[0-9A-F]{6}$"></input>
+    <div class="name" style="background-color: #FFF; margin: 0.1em 0.25em;" id='Wbox'></div>
+    <div class="name" style="background-color: #000; margin: 0.1em 0.25em;" id='Kbox'></div>
 </div>
 </div>
 <textarea id='inputarea'>
