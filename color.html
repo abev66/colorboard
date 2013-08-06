@@ -17,6 +17,7 @@ var change_bgcolor = function() {
     ryb = rgb2ryb(color_r, color_g, color_b);
     ryb = complimentary(ryb[0], ryb[1], ryb[2]);
     rgb_comp = ryb2rgb(ryb[0], ryb[1], ryb[2]);
+    rgb_comp = [parseInt(rgb_comp[0]), parseInt(rgb_comp[1]), parseInt(rgb_comp[2])];
     var fgcolor = 'rgb(' + rgb_comp.join(',') + ')';
     
     $('body').css('background', color);
