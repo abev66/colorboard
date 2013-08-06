@@ -4,6 +4,12 @@
 <script src="ryb.js" type="text/javascript"></script>
 <script>
 
+  function padLeft(str, len) {
+    if(str.length >= len)
+      return str;
+    else return padLeft("0"+str, len);
+  }
+
 var color_r, color_g, color_b;
 $(function main() {
     color_r = color_g = color_b = 255;
@@ -36,7 +42,7 @@ $(function() {
         else if(id == 'Bbar') { color_b = val; $('#Btext').val(val); }
         
         var ccode = '#'
-            + color_r.toString(16) + color_g.toString(16) + color_b.toString(16);
+            + padLeft(color_r.toString(16),2) + padLeft(color_g.toString(16),2) + padLeft(color_b.toString(16),2);
         $('#ccode').val(ccode.toUpperCase());
         
         change_bgcolor();
@@ -93,6 +99,11 @@ $(function() {
         color_r = r; $('#Rbar, #Rtext').val(r);
         color_g = g; $('#Gbar, #Gtext').val(g);
         color_b = b; $('#Bbar, #Btext').val(b);
+        
+        var ccode = '#'
+            + padLeft(color_r.toString(16),2) + padLeft(color_g.toString(16),2) + padLeft(color_b.toString(16),2);
+        $('#ccode').val(ccode.toUpperCase());
+        
         
         change_bgcolor();
       }
