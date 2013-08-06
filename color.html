@@ -76,32 +76,15 @@ $(function() {
     $('.name').click(function(){
         var id = $(this).attr('id');
         
-        if(id == 'Rbox') {
-	    r = 255; g = 0; b = 0;
-            color_r = r; $('#Rbar, #Rtext').val(r);
-            color_g = g; $('#Gbar, #Gtext').val(g);
-            color_b = b; $('#Bbar, #Btext').val(b);
-        } else if( id == 'Gbox') {
-	    r = 0; g = 255; b = 0;
-            color_r = r; $('#Rbar, #Rtext').val(r);
-            color_g = g; $('#Gbar, #Gtext').val(g);
-            color_b = b; $('#Bbar, #Btext').val(b);
-        } else if( id == 'Bbox') {
-            r = 0; g = 0; b = 255;
-            color_r = r; $('#Rbar, #Rtext').val(r);
-            color_g = g; $('#Gbar, #Gtext').val(g);
-            color_b = b; $('#Bbar, #Btext').val(b);
-        } else if( id == 'Wbox') {
-            r = 255; g = 255; b = 255;
-            color_r = r; $('#Rbar, #Rtext').val(r);
-            color_g = g; $('#Gbar, #Gtext').val(g);
-            color_b = b; $('#Bbar, #Btext').val(b);
-        } else if( id == 'Kbox') {
-            r = 0; g = 0; b = 0;
-            color_r = r; $('#Rbar, #Rtext').val(r);
-            color_g = g; $('#Gbar, #Gtext').val(g);
-            color_b = b; $('#Bbar, #Btext').val(b);
-        }
+        if     ( id == 'Rbox') { r = 255; g = 0;   b = 0;   }
+        else if( id == 'Gbox') { r = 0;   g = 255; b = 0;   }
+        else if( id == 'Bbox') { r = 0;   g = 0;   b = 255; }
+        else if( id == 'Wbox') { r = 255; g = 255; b = 255; }
+        else if( id == 'Kbox') { r = 0;   g = 0;   b = 0;   }
+        
+        color_r = r; $('#Rbar, #Rtext').val(r);
+        color_g = g; $('#Gbar, #Gtext').val(g);
+        color_b = b; $('#Bbar, #Btext').val(b);
         
         change_bgcolor();
       }
