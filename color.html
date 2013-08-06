@@ -1,6 +1,7 @@
 <html>
 
 <script src="http://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+<script src="ryb.js" type="text/javascript"></script>
 <script>
 
 var color_r, color_g, color_b;
@@ -11,12 +12,18 @@ $(function main() {
 
 var change_bgcolor = function() {
     var color = 'rgb(' +color_r+ ',' +color_g+ ',' +color_b+ ')';
-    var fgcolor = 'rgb(' + (255-color_r) + ',' + (255-color_g) + ',' + (255-color_b) + ')';
+    
+    //get complimentary color
+    ryb = rgb2ryb(color_r, color_g, color_b);
+    ryb = complimentary(ryb[0], ryb[1], ryb[2]);
+    rgb_comp = ryb2rgb(ryb[0], ryb[1], ryb[2]);
+    var fgcolor = 'rgb(' + rgb_comp.join(',') + ')';
+    
     $('body').css('background', color);
     console.log(color);
     $('#inputarea').css('color', fgcolor);
     console.log(fgcolor);
-}
+};
 
 $(function() {
     $('.cbar').change(function() {
