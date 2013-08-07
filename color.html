@@ -33,7 +33,7 @@ var change_bgcolor = function() {
 };
 
 $(function() {
-    $('.cbar').change(function() {
+    $('.cbar').on('input', function() {
         var id = $(this).attr('id');
         var val = parseInt($(this).val());
         
@@ -51,7 +51,7 @@ $(function() {
 
 
 $(function() {
-    $('.ctext').change(function() {
+    $('.ctext').on('input', function() {
         var id = $(this).attr('id');
         
         if(id == 'ccode') {
